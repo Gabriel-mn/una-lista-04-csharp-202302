@@ -1,0 +1,111 @@
+class Program
+{
+    static void Main()
+    {
+        // Exercício 1
+        double nota;
+        do
+        {
+            Console.Write("Informe uma nota entre 0 e 10: ");
+            nota = double.Parse(Console.ReadLine());
+        } while (nota < 0 || nota > 10);
+        Console.WriteLine("Nota válida: " + nota);
+
+        // Exercício 2
+        string nome, senha;
+        do
+        {
+            Console.Write("Digite um nome de usuário: ");
+            nome = Console.ReadLine();
+            Console.Write("Digite uma senha: ");
+            senha = Console.ReadLine();
+            if (nome == senha)
+                Console.WriteLine("Erro: A senha não pode ser igual ao nome do usuário.");
+        } while (nome == senha);
+        Console.WriteLine("Usuário registrado com sucesso!");
+
+        // Exercício 3
+        string nome2, sexo, estadoCivil;
+        int idade;
+        double salario;
+        do
+        {
+            Console.Write("Informe o nome (maior que 3 caracteres): ");
+            nome2 = Console.ReadLine();
+        } while (nome2.Length <= 3);
+
+        do
+        {
+            Console.Write("Informe a idade (entre 0 e 150): ");
+            idade = int.Parse(Console.ReadLine());
+        } while (idade < 0 || idade > 150);
+
+        do
+        {
+            Console.Write("Informe o salário (maior que zero): ");
+            salario = double.Parse(Console.ReadLine());
+        } while (salario <= 0);
+
+        do
+        {
+            Console.Write("Informe o sexo ('f' ou 'm'): ");
+            sexo = Console.ReadLine().ToLower();
+        } while (sexo != "f" && sexo != "m");
+
+        do
+        {
+            Console.Write("Informe o estado civil ('s', 'c', 'v' ou 'd'): ");
+            estadoCivil = Console.ReadLine().ToLower();
+        } while (estadoCivil != "s" && estadoCivil != "c" && estadoCivil != "v" && estadoCivil != "d");
+
+        // Exercício 4
+        double soma = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            Console.Write("Informe o número " + (i + 1) + ": ");
+            double numero = double.Parse(Console.ReadLine());
+            soma += numero;
+        }
+        double media = soma / 5;
+        Console.WriteLine("Soma dos números: " + soma);
+        Console.WriteLine("Média dos números: " + media);
+
+        // Exercício 5
+        Console.WriteLine("Números ímpares entre 1 e 50:");
+        for (int i = 1; i <= 50; i++)
+        {
+            if (i % 2 != 0)
+            {
+                Console.Write(i + " ");
+            }
+        }
+        Console.WriteLine();
+
+        // Exercício 6
+        Console.Write("Informe o primeiro número: ");
+        int num1 = int.Parse(Console.ReadLine());
+        Console.Write("Informe o segundo número: ");
+        int num2 = int.Parse(Console.ReadLine());
+        Console.WriteLine("Números no intervalo entre " + num1 + " e " + num2 + ":");
+        for (int i = num1; i <= num2; i++)
+        {
+            Console.Write(i + " ");
+        }
+        Console.WriteLine();
+
+        // Exercício 7
+        int numerosPares = 0;
+        int numerosImpares = 0;
+        for (int i = 0; i < 10; i++)
+        {
+            Console.Write("Informe o número " + (i + 1) + ": ");
+            int numero = int.Parse(Console.ReadLine());
+            if (numero % 2 == 0)
+                numerosPares++;
+            else
+                numerosImpares++;
+        }
+        Console.WriteLine("Quantidade de números pares: " + numerosPares);
+        Console.WriteLine("Quantidade de números ímpares: " + numerosImpares);
+    }
+}
